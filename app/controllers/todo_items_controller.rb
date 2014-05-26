@@ -1,5 +1,4 @@
 require 'pry'
-
 class TodoItemsController < ApplicationController
 
   def create
@@ -13,6 +12,13 @@ class TodoItemsController < ApplicationController
       render :show
     end
 
+  end
+
+  def update_checkbox
+    todo_item = TodoItem.find(params[:todo_item_id].to_i)
+    params[:checked] == "true" ? todo_item.checked = true : todo_item.checked = false
+    todo_item.save
+    render nothing: true
   end
 
   private

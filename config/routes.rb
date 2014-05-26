@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :todos
   
   post '/todo_items' => 'todo_items#create', as: 'todo_items'
+  post '/update_checkbox' => 'todo_items#update_checkbox', as: 'update_checkbox'
 
   get '/sign_up' => 'users#new', as: 'new_user'
   post '/users' => 'users#create', as: 'users'

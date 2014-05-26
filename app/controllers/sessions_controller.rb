@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
     if User.find_by(email: params[:email])
       cookies[:todo_email] = params[:email] 
-      redirect_to new_todo_path
+      redirect_to todos_path
     else
       redirect_to new_user_path
     end
