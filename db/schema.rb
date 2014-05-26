@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140526170006) do
   create_table "todos", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "due_date"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

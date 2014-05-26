@@ -1,0 +1,7 @@
+<%= link_to 'New List', todos_new_path %>
+
+<ol>
+  <% @todos.each do |todo| %>
+    <li><%= todo.title %></li>
+  <% end %>
+</ol>

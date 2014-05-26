@@ -3,8 +3,7 @@ class CreateTodos < ActiveRecord::Migration
     create_table :todos do |t|
       t.string :title
       t.text :description
-      t.datetime :due_date
-      t.boolean :active
+      t.integer :user_id
       t.timestamps
     end
   end
