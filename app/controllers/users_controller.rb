@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:email])
+    @user = User.new(email: params[:user][:email])
 
     if @user.save
       redirect_to login_path
