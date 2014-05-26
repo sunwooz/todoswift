@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post '/todo_items' => 'todo_items#create', as: 'todo_items'
   post '/update_checkbox' => 'todo_items#update_checkbox', as: 'update_checkbox'
 
+  get '/todos/:id/up' => 'todo_items#up'
+  get '/todos/:id/down' => 'todo_items#down'
+
   get '/sign_up' => 'users#new', as: 'new_user'
   post '/users' => 'users#create', as: 'users'
 

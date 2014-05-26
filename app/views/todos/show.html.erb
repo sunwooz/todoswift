@@ -1,6 +1,8 @@
 <h1><%= @todo.title %></h1>
 <p><%= @todo.description %></p>
 
+<h1>Create a new todo item</h1>
+
 <%= form_for @todo_item do |f| %>
   <input type="hidden" name="todo_id" value="<%= @todo.id %>"/>
 
@@ -20,6 +22,7 @@
 <div class="table-responsive">
   <table class="table">
     <tr>
+      <th>Change Priority</th>
       <th>Active?</th>
       <th>Title</th>   
       <th>Description</th>
@@ -28,6 +31,14 @@
 
     <% @todo_items.each do |todo_item| %>
       <tr>
+
+        <td>
+          <% if !todo_item.title.nil? %>
+            <a href="/todos/<%= todo_item.id %>/up">Up</a>
+            <a href="/todos/<%= todo_item.id %>/up">Down</a>
+          <% end %>
+        </td>
+
         <td>
           <%= check_box_tag( todo_item.id, 'active', checked = active_or_not(todo_item), class: 'checkbox' ) %>
         </td>

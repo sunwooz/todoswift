@@ -14,6 +14,18 @@ class TodoItemsController < ApplicationController
 
   end
 
+  def up
+    todo_item = TodoItem.find(params[:id].to_i)
+    todo_item.move_higher
+    redirect_to :back
+  end
+
+  def down
+    todo_item = TodoItem.find(params[:id].to_i)
+    todo_item.move_lower
+    redirect_to :back
+  end
+
   def update_checkbox
     todo_item = TodoItem.find(params[:todo_item_id].to_i)
     params[:checked] == "true" ? todo_item.checked = true : todo_item.checked = false

@@ -1,7 +1,11 @@
 module SessionsHelper
 
   def logged_in?
-    cookies[:todo_email].nil? || cookies[:todo_email].empty? ? false : true
+    if cookies[:todo_email].nil? || cookies[:todo_email].empty?
+      return false
+    else
+      !User.find_by(email: cookies[:todo_email]).nil? ? true : false
+    end
   end
 
   def current_user
