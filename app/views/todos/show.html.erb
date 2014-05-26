@@ -16,7 +16,7 @@
   <%= f.submit "Create Todo Item" %>
 <% end %>
 
-<%= @todo_items.each do |todo_item| %>
+<% @todo_items.each do |todo_item| %>
   <h3><%= todo_item.title %></h3>
   <p><%= todo_item.description %></p>
   <p><%= todo_item.due_date %></p>

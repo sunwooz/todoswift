@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   
   post '/todo_items' => 'todo_items#create', as: 'todo_items'
 
+  get '/sign_up' => 'users#new', as: 'new_user'
+  post '/users' => 'users#create', as: 'users'
+
+  get '/login' => 'sessions#new', as: 'login'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

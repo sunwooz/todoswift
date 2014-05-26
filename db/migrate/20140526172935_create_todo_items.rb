@@ -4,7 +4,7 @@ class CreateTodoItems < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.datetime :due_date
-      t.boolean :active
+      t.boolean :checked
       t.integer :todo_id
       t.timestamps
     end
