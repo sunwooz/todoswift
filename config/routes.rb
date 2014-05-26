@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root 'todos#index', as: 'todos'
+  root 'todos#index'
 
-  get 'todos/new' => 'todos#new'
+  resources :todos
+  
+  post '/todo_items' => 'todo_items#create', as: 'todo_items'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
